@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Result</h1>
+
+    {% if output_image %}
+        <h2>Encoded Image:</h2>
+        <img src="{{ output_image }}" alt="Encoded Image">
+        {% if key %}
+            <p>Encryption Key (Save This!): {{ key }}</p>
+        {% endif %}
+    {% endif %}
+
+    {% if decoded_message %}
+        <h2>Decoded Message:</h2>
+        <p>{{ decoded_message }}</p>
+    {% endif %}
+
+    {% if decoded_video %}
+        <h2>Decoded Video:</h2>
+        <video controls>
+            <source src="{{ decoded_video }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+
+    {% if decoded_file %}
+    <h2>Decoded File:</h2>
+    <a href="{{ decoded_file }}" download>Download the decoded file</a>
+    {% endif %}
+
+    {% if decoded_audio %}
+    <h2>Decoded Audio:</h2>
+    <audio controls>
+        <source src="{{ decoded_audio }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+
+
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,306 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(90deg,#00010e,#00010e);
+    overflow: hidden;
+    
+}
+h1 {
+    font-size: 2.5rem;
+    color: #f4f4f9;
+    margin-bottom: 1px;
+}
+h2 {
+    font-size: 1.8rem;
+    color: #f9f8f4;
+    margin-bottom: 15px;
+}
+form {
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    max-width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    color: #f4f4f9;
+}
+label {
+    padding-top: 4%;
+    display: block;
+    font-size: 1rem;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+input, textarea, button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+button {
+    margin-top: 6%;
+    background-color: #92772e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #92772e;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.form-container {
+    margin-bottom: 40px;
+}
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+video {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+
+/* bakground animation */
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area {
+    background: #00010e;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height: 100vh; /* This ensures the height is always the full viewport height */
+    position: fixed; /* Keeps the background fixed when scrolling */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Puts the background behind all other elements */
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensures the circles stay behind the content */
+}
+
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+/* javascript */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 1px;
+    padding-top: 0%;
+    padding-left: 20%;
+    width: 60%;
+}
+
+
+.action-button {
+    padding: 10px 20px;
+    background-color: #92772e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #92772e;
+}
+
+
+.form-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    height: 400px;
+}
+
+.form-section {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c22;
+    border-radius: 30px;
+    color: #f4f4f9;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    left: 100%; /* Move out of view */
+    opacity: 0; /* Hide it */
+}
+
+#encode-form.active {
+    left: 0;
+}
+
+#decode-form.active {
+    left: 0;
+}

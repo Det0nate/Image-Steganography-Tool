@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography</title>
+    <link rel="stylesheet" href="/static/text_in_image.css">
+</head>
+<body>
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+    </div >
+
+    <h1>Image Steganography - Text</h1>
+
+    <div class="button-container">
+        <button type="button" class="action-button" onclick="showEncode()">Encode Text</button>
+        <button type="button" class="action-button" onclick="showDecode()">Decode Text</button>
+    </div>
+
+    <div class="form-slider">
+        <div id="encode-form" class="form-section">
+            <h2>Encode Text Image</h2>
+            <form action="/encode" method="post" enctype="multipart/form-data">
+                <label for="image">Select Image:</label>
+                <input type="file" name="image" id="image" required>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" required></textarea>
+                <label for="encryption">Encrypt Message:</label>
+                <input type="checkbox" name="encryption" id="encryption">
+                <button type="submit">Encode</button>
+            </form>
+        </div>
+
+        <div id="decode-form" class="form-section hidden">
+            <h2>Decode Text Image</h2>
+            <form action="/decode" method="post" enctype="multipart/form-data">
+                <label for="image">Select Image:</label>
+                <input type="file" name="image" id="image" required>
+                <label for="key">Decryption Key (if encrypted):</label>
+                <input type="text" name="key" id="key">
+                <button type="submit">Decode</button>
+            </form>
+        </div>
+    </div>
+  
+
+    <footer>
+        &copy; 2024 Image Steganography. All Rights Reserved.
+    </footer>
+
+    <script>
+        function resetForms() {
+            const encodeForm = document.getElementById('encode-form');
+            const decodeForm = document.getElementById('decode-form');
+    
+            // Reset positions and hide both forms
+            encodeForm.style.left = '100%';
+            decodeForm.style.left = '100%';
+            encodeForm.classList.add('hidden');
+            decodeForm.classList.add('hidden');
+        }
+    
+        function showEncode() {
+            const encodeForm = document.getElementById('encode-form');
+            const decodeForm = document.getElementById('decode-form');
+    
+            // Reset all forms
+            resetForms();
+    
+            // Show encode form
+            encodeForm.classList.remove('hidden');
+            encodeForm.classList.add('active');
+            encodeForm.style.left = '0'; // Slide into view
+        }
+    
+        function showDecode() {
+            const encodeForm = document.getElementById('encode-form');
+            const decodeForm = document.getElementById('decode-form');
+    
+            // Reset all forms
+            resetForms();
+    
+            // Show decode form
+            decodeForm.classList.remove('hidden');
+            decodeForm.classList.add('active');
+            decodeForm.style.left = '0'; // Slide into view
+        }
+
+         // Ensure the Encode Video form is visible on page load
+        window.onload = function () {
+        const encodeForm = document.getElementById('encode-form');
+        encodeForm.style.left = '0'; // Ensure it's in view
+        encodeForm.classList.remove('hidden'); // Remove hidden class if any
+        
+    };
+    </script>
+</body>
+</html>
